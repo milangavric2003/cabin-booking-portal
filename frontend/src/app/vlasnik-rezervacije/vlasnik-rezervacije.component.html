@@ -1,0 +1,60 @@
+<!-- <h3>Neobradjene rezervacije:</h3>
+<table border="1">
+    <tr>
+        <th>Datum pocetka rezervacije</th>
+        <th>Datum kraja rezervacije</th>
+        <th>Naziv</th>
+        <th>Mesto</th>
+        <th>Komentar</th>
+    </tr>
+    @for (rez of rezervacije; track $index) {
+        <tr>
+            <td> {{rez.datumPocetka}} </td>
+            <td> {{rez.datumKraja}} </td>
+            <td> {{rez.nazivVikendice}} </td>
+            <td> {{rez.mestoVikendice}} </td>
+            <td> <textarea name="komentar" [(ngModel)]="rez.komentarVlasnika"></textarea> </td>
+            <td> <button (click)="potvrdi(rez)">Potvrdi</button> </td>
+            <td> <button (click)="odbij(rez)">Odbij</button></td>
+        </tr>
+    }
+</table>
+<span style="color: red;">{{messageOdb}}</span> -->
+
+<h3>Neobrađene rezervacije:</h3>
+
+<table class="rezervacije-table">
+  <thead>
+    <tr>
+      <th>Datum podnosenja zahteva</th>
+      <th>Datum početka rezervacije</th>
+      <th>Datum kraja rezervacije</th>
+      <th>Naziv</th>
+      <th>Mesto</th>
+      <th>Komentar</th>
+      <th colspan="2">Akcije</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (rez of rezervacije; track $index) {
+      <tr>
+        <td> {{rez.datumPodnosenjaZahteva | date: "dd.MM.yyyy hh:ss"}} </td>
+        <td>{{rez.datumPocetka | date: "dd.MM.yyyy"}}</td>
+        <td>{{rez.datumKraja | date: "dd.MM.yyyy"}}</td>
+        <td>{{rez.nazivVikendice}}</td>
+        <td>{{rez.mestoVikendice}}</td>
+        <td>
+          <textarea name="komentar" [(ngModel)]="rez.komentarVlasnika" placeholder="Unesi komentar..."></textarea>
+        </td>
+        <td>
+          <button class="btn potvrdi" (click)="potvrdi(rez)">Potvrdi</button>
+        </td>
+        <td>
+          <button class="btn odbij" (click)="odbij(rez)">Odbij</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<span class="error-message">{{messageOdb}}</span>

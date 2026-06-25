@@ -1,0 +1,126 @@
+h3 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.rezervacije-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.rezervacije-table th,
+.rezervacije-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rezervacije-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.rezervacije-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.rezervacije-table tr:hover {
+  background-color: #f1f7ff;
+}
+
+textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 5px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.btn.potvrdi {
+  background-color: #28a745;
+}
+
+.btn.potvrdi:hover {
+  background-color: #218838;
+}
+
+.btn.odbij {
+  background-color: #dc3545;
+}
+
+.btn.odbij:hover {
+  background-color: #c82333;
+}
+
+.error-message {
+  display: block;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive stilovi */
+@media screen and (max-width: 768px) {
+  .rezervacije-table, 
+  .rezervacije-table thead, 
+  .rezervacije-table tbody, 
+  .rezervacije-table th, 
+  .rezervacije-table td, 
+  .rezervacije-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .rezervacije-table thead tr {
+    display: none;
+  }
+
+  .rezervacije-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .rezervacije-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .rezervacije-table td:last-child {
+    border-bottom: none;
+  }
+
+  .rezervacije-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}

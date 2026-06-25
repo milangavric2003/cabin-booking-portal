@@ -1,0 +1,111 @@
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 8px 30px; /* duplo manja visina od originalnih 15px */
+  text-align: center;
+  font-size: 11px; /* duplo manji font od originalnih 22px */
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detalji-wrapper {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.detalji-wrapper h3 {
+  flex: 1;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.detalji-wrapper {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  /* dodaj dovoljno paddinga na dnu da poruka nije preblizu footera */
+  padding-bottom: 180px; 
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+.info p,
+.potvrda p {
+  margin: 4px 0; /* manji razmak između redova */
+}
+
+.galerija img {
+  margin: 3px;
+  border-radius: 6px;
+}
+
+.zakazivanje label,
+.potvrda label {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.zakazivanje input[type="datetime-local"],
+.zakazivanje input[type="number"],
+.potvrda input[type="text"],
+.potvrda textarea {
+  margin: 2px 0 5px 0; /* manji razmak pre i posle inputa */
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+.zakazivanje input[type="datetime-local"]:focus,
+.zakazivanje input[type="number"]:focus,
+.potvrda input[type="text"]:focus,
+.potvrda textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.buttons {
+  margin-top: 5px;
+}
+
+.buttons button {
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.buttons button:hover {
+  background-color: #1e40af;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}

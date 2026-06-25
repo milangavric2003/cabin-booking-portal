@@ -1,0 +1,68 @@
+.profil-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profil-info p {
+  margin: 5px 0;
+}
+
+.profil-info .profil-slika {
+  width: 120px;  /* duplo manja od originalnih 150px */
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 5px;
+}
+
+.profil-update {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.profil-update label {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.profil-update input[type="text"],
+.profil-update input[type="file"] {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s;
+  margin-bottom: 5px;
+}
+
+.profil-update input[type="text"]:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.profil-update button {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.profil-update button:hover {
+  background-color: #1e40af;
+}
+
+.logo-kartice {
+  vertical-align: middle;
+}

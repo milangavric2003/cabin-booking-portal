@@ -1,0 +1,78 @@
+<!-- 
+<h3>Azuriraj profil</h3>
+Korisnicko ime: <input type="text" name="firstname" [(ngModel)]="azuriranjeKorisnika.kor_ime"> <br>
+Ime: <input type="text" name="firstname" [(ngModel)]="azuriranjeKorisnika.ime"> <br>
+Prezime: <input type="text" name="lastname" [(ngModel)]="azuriranjeKorisnika.prezime"><br>
+Pol: <input type="radio" name="pol" value="M" [(ngModel)]="azuriranjeKorisnika.pol" id="muski"> <label for="muski">M</label>
+<input type="radio" name="pol" value="Z" [(ngModel)]="azuriranjeKorisnika.pol" id="zenski"> <label for="zenski">Z</label> <br>
+Adresa: <input type="text" name="adresa" [(ngModel)]="azuriranjeKorisnika.adresa"> <br>
+Kontakt telefon: <input type="text" name="telefon" [(ngModel)]="azuriranjeKorisnika.telefon"> <br>
+Mejl: <input type="text" name="mejl" [(ngModel)]="azuriranjeKorisnika.mejl"> <br>
+
+Profilna slika: <input type="file" name="slika" accept="image/png, image/jpeg" (change)="imageSelected($event)"> <br>
+<img [src]="azuriranjeKorisnika.slika" alt="Profilna slika" width="150" height="150"> <br>
+
+Broj kreditne kartice: <input type="text" name="kartica" [(ngModel)]="azuriranjeKorisnika.kartica"> <br>
+Tip korisnika: <input type="radio" name="tip" value="vlasnik" [(ngModel)]="azuriranjeKorisnika.tip" id="vl"> <label for="vl">Vlasnik</label>
+<input type="radio" name="tip" value="turista" [(ngModel)]="azuriranjeKorisnika.tip" id="tur"> <label for="tur">Turista</label> <br>
+
+<button (click)="azurirajProfil()">Azuriraj</button> -->
+
+<header class="main-header">
+  <h1>Azuriranje profila</h1>
+</header>
+
+<main class="profil-container">
+  <h3>Ažuriraj profil</h3>
+
+  <form class="profil-form">
+    <label>Korisničko ime:</label>
+    <input type="text" name="kor_ime" [(ngModel)]="azuriranjeKorisnika.kor_ime">
+
+    <label>Ime:</label>
+    <input type="text" name="ime" [(ngModel)]="azuriranjeKorisnika.ime">
+
+    <label>Prezime:</label>
+    <input type="text" name="prezime" [(ngModel)]="azuriranjeKorisnika.prezime">
+
+    <label>Pol:</label>
+    <div class="radio-group">
+      <input type="radio" name="pol" value="M" [(ngModel)]="azuriranjeKorisnika.pol" id="muski">
+      <label for="muski">M</label>
+      <input type="radio" name="pol" value="Z" [(ngModel)]="azuriranjeKorisnika.pol" id="zenski">
+      <label for="zenski">Z</label>
+    </div>
+
+    <label>Adresa:</label>
+    <input type="text" name="adresa" [(ngModel)]="azuriranjeKorisnika.adresa">
+
+    <label>Kontakt telefon:</label>
+    <input type="text" name="telefon" [(ngModel)]="azuriranjeKorisnika.telefon">
+
+    <label>Mejl:</label>
+    <input type="text" name="mejl" [(ngModel)]="azuriranjeKorisnika.mejl">
+
+    <label>Profilna slika:</label> <button (click)="obrisiSliku()">Obrisi sliku</button>
+    <input type="file" name="slika" accept="image/png, image/jpeg" (change)="imageSelected($event)">
+    <img [src]="azuriranjeKorisnika.slika" alt="Profilna slika" width="150" height="150">
+
+    <label>Broj kreditne kartice:</label>
+    <input type="text" name="kartica" [(ngModel)]="azuriranjeKorisnika.kartica">
+
+    <label>Tip korisnika:</label>
+    <div class="radio-group">
+      <input type="radio" name="tip" value="vlasnik" [(ngModel)]="azuriranjeKorisnika.tip" id="vl">
+      <label for="vl">Vlasnik</label>
+      <input type="radio" name="tip" value="turista" [(ngModel)]="azuriranjeKorisnika.tip" id="tur">
+      <label for="tur">Turista</label>
+    </div>
+
+    <button type="button" (click)="azurirajProfil()">Ažuriraj</button>
+  </form>
+</main>
+
+<footer>
+  <button (click)="naPocetak()">Na pocetak</button> &nbsp;
+  <app-admin-logout></app-admin-logout> &nbsp;
+  © 2025 Milan Gavric
+</footer>

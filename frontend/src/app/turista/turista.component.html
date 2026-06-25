@@ -1,0 +1,28 @@
+<!-- 
+
+<app-logout></app-logout>
+
+<a routerLink="profil">Profil</a> |
+<a routerLink="vikendice">Vikendice</a> |
+<a routerLink="rezervacije">Rezervacije</a>
+
+<router-outlet></router-outlet> -->
+
+<header>
+  <h1>Turista</h1>
+</header>
+
+<nav class="turista-nav">
+  <a routerLink="profil">Profil</a>
+  <a routerLink="vikendice">Vikendice</a>
+  <a routerLink="rezervacije">Rezervacije</a>
+</nav>
+
+<main class="turista-main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <app-logout></app-logout> &nbsp;
+  © 2025 Milan Gavric
+</footer>

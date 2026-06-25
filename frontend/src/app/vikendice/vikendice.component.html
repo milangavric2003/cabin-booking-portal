@@ -1,0 +1,74 @@
+<!-- <h3>Vikendice:</h3>
+Sortiraj: 
+<select name="sortiranje" (change)="sortiraj($event)">
+    <option value="Bez sortiranja">NE</option>
+    <option value="Rastuce po nazivu">Rastuce po nazivu</option>
+    <option value="Rastuce po mestu">Rastuce po mestu</option>
+    <option value="Opadajuce po nazivu">Opadajuce po nazivu</option>
+    <option value="Opadajuce po mestu">Opadajuce po mestu</option>
+</select>
+<br>
+
+<table border="1">
+    <tr>
+        <th>Naziv</th>
+        <th>Mesto</th>
+    </tr>
+    @for (vik of vikendice; track $index) {
+        <tr>
+            @if(korisnik) {
+                <td> <a href="detalji-vikendice" (click)="detaljiVikendice(vik)">{{vik.naziv}}</a> </td>
+            } @else {
+                <td>{{vik.naziv}}</td>
+            }
+            <td>{{vik.mesto}}</td>
+        </tr>
+    }
+</table>
+Naziv: <input type="text" name="naziv" [(ngModel)]="naziv">
+Mesto: <input type="text" name="mesto" [(ngModel)]="mesto">
+<button (click)="pretrazi()">Pretrazi</button> -->
+
+<div class="vikendice-wrapper">
+  <h3>Vikendice:</h3>
+
+  <div class="sort-wrapper">
+    <label for="sortiranje">Sortiraj:</label>
+    <select name="sortiranje" id="sortiranje" (change)="sortiraj($event)">
+      <option value="Bez sortiranja">NE</option>
+      <option value="Rastuce po nazivu">Rastuce po nazivu</option>
+      <option value="Rastuce po mestu">Rastuce po mestu</option>
+      <option value="Opadajuce po nazivu">Opadajuce po nazivu</option>
+      <option value="Opadajuce po mestu">Opadajuce po mestu</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Naziv</th>
+        <th>Mesto</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (vik of vikendice; track $index) {
+        <tr>
+          @if(korisnik) {
+            <td>
+              <a href="detalji-vikendice" (click)="detaljiVikendice(vik)">{{vik.naziv}}</a>
+            </td>
+          } @else {
+            <td>{{vik.naziv}}</td>
+          }
+          <td>{{vik.mesto}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="pretraga-wrapper">
+    <input type="text" name="naziv" [(ngModel)]="naziv" placeholder="Naziv">
+    <input type="text" name="mesto" [(ngModel)]="mesto" placeholder="Mesto">
+    <button (click)="pretrazi()">Pretrazi</button>
+  </div>
+</div>

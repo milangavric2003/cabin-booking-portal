@@ -1,0 +1,70 @@
+<!-- <h3>Prijava</h3> 
+Korisnicko ime: <input type="text" name="username" [(ngModel)]="username"> <br>
+Lozinka: <input type="password" name="password" [(ngModel)]="password"><br>
+<button (click)="login()">Prijavi</button> <br>
+{{messageL}}  -->
+
+<header>
+  <h1>Login</h1>
+</header>
+
+
+<main class="login-wrapper">
+  <h3>Prijava</h3>
+
+  <form class="login-form" (ngSubmit)="login()">
+    <label for="username">Korisničko ime:</label>
+    <input
+      id="username"
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      required
+    />
+
+    <label for="password">Lozinka:</label>
+    <input
+      id="password"
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      required
+    />
+
+    <button type="submit">Prijavi</button>
+
+    <p class="message">{{ messageL }}</p>
+  </form>
+</main>
+
+<footer>
+  <button (click)="naPocetak()">Na pocetak</button>
+  © 2025 Milan Gavric
+</footer>
+
+<!-- <h3><a routerLink="promena-lozinke">Promena lozinke</a></h3>
+
+<h3>Registracija</h3>
+Korisnicko ime: <input type="text" name="username" [(ngModel)]="korisnik.kor_ime"> <br>
+Lozinka: <input type="password" name="password" [(ngModel)]="korisnik.lozinka"><br>
+Ime: <input type="text" name="firstname" [(ngModel)]="korisnik.ime"> <br>
+Prezime: <input type="text" name="lastname" [(ngModel)]="korisnik.prezime"><br>
+Pol: <input type="radio" name="pol" value="M" [(ngModel)]="korisnik.pol" id="muski"> <label for="muski">M</label>
+<input type="radio" name="pol" value="Z" [(ngModel)]="korisnik.pol" id="zenski"> <label for="zenski">Z</label> <br>
+Adresa: <input type="text" name="adresa" [(ngModel)]="korisnik.adresa"> <br>
+Kontakt telefon: <input type="text" name="telefon" [(ngModel)]="korisnik.telefon"> <br>
+Mejl: <input type="text" name="mejl" [(ngModel)]="korisnik.mejl"> <br>
+Profilna slika: <input type="file" name="slika" accept="image/png, image/jpeg" (change)="imageSelected($event)"> <br>
+
+Broj kreditne kartice: <input type="text" name="kartica" [(ngModel)]="korisnik.kartica" (input)="prikaziLogoKartice()"> 
+@if (logoImageSrc != "") {
+    &nbsp; <img [src]="logoImageSrc" width="30" height="30" style="margin-bottom: -10px;">
+}
+<br>
+
+Tip korisnika: <input type="radio" name="tip" value="vlasnik" [(ngModel)]="korisnik.tip" id="vl"> <label for="vl">Vlasnik</label>
+<input type="radio" name="tip" value="turista" [(ngModel)]="korisnik.tip" id="tur"> <label for="tur">Turista</label> <br>
+<button (click)="register()">Register</button> <br>
+<span>{{messageR}}</span>
+
+<app-neregistrovani></app-neregistrovani> -->

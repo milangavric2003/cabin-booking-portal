@@ -1,0 +1,41 @@
+<!-- <h3>Promena lozinke</h3> 
+Korisnicko ime: <input type="text" name="username" [(ngModel)]="kor_ime"> <br>
+Stara lozinka: <input type="password" name="stara" [(ngModel)]="staraL"><br>
+Nova lozinka: <input type="password" name="nova" [(ngModel)]="novaL"><br>
+Ponovljena nova lozinka: <input type="password" name="ponovljena" [(ngModel)]="ponovljenaNovaL"><br>
+<button (click)="promeniLozinku()">Promeni</button> <br>
+{{message}}  -->
+
+<header>
+  <h1>Planinska vikendica</h1>
+</header>
+
+
+<main class="change-password-wrapper">
+  <h3>Promena lozinke</h3>
+
+  <form class="change-password-form">
+    <label for="kor_ime">Korisničko ime:</label>
+    <input id="kor_ime" type="text" name="username" [(ngModel)]="kor_ime" />
+
+    <label for="stara">Stara lozinka:</label>
+    <input id="stara" type="password" name="stara" [(ngModel)]="staraL" />
+
+    <label for="nova">Nova lozinka:</label>
+    <input id="nova" type="password" name="nova" [(ngModel)]="novaL" />
+
+    <label for="ponovljena">Ponovljena nova lozinka:</label>
+    <input id="ponovljena" type="password" name="ponovljena" [(ngModel)]="ponovljenaNovaL" />
+
+    <button type="button" (click)="promeniLozinku()">Promeni</button>
+
+    @if(message != "") {
+      <p class="message">{{message}}</p>
+    }
+  </form>
+</main>
+
+<footer>
+  <button (click)="naPocetak()">Na pocetak</button> &nbsp;
+  © 2025 Milan Gavric 
+</footer>

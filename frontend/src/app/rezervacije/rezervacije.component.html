@@ -1,0 +1,49 @@
+<!-- <h3>Aktuelna zakazivanja:</h3>
+<table border="1">
+    <tr>
+        <th>Datum pocetka rezervacije</th>
+        <th>Datum kraja rezervacije</th>
+        <th>Naziv</th>
+        <th>Mesto</th>
+        <th>Status</th>
+        <th>Komentar vlasnika</th>
+    </tr>
+    @for (rez of rezervacije; track $index) {
+        <tr>
+            <td> {{rez.datumPocetka}} </td>
+            <td> {{rez.datumKraja}} </td>
+            <td> {{rez.nazivVikendice}} </td>
+            <td> {{rez.mestoVikendice}} </td>
+            <td> {{rez.status}} </td>
+            <td> {{rez.komentarVlasnika}} </td>
+        </tr>
+    }
+</table> -->
+
+<main class="rezervacije-main">
+  <h3>Aktuelna zakazivanja:</h3> 
+  <table>
+    <thead>
+      <tr>
+        <th>Datum pocetka rezervacije</th>
+        <th>Datum kraja rezervacije</th>
+        <th>Naziv</th>
+        <th>Mesto</th>
+        <th>Status</th>
+        <th>Komentar vlasnika</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (rez of rezervacije; track $index) {
+        <tr [class.status-odobren]="rez.status == 'odobren'" [class.status-odbijen]="rez.status == 'odbijen'">
+          <td> {{rez.datumPocetka | date: "dd.MM.yyyy"}} </td>
+          <td> {{rez.datumKraja | date: "dd.MM.yyyy"}} </td>
+          <td> {{rez.nazivVikendice}} </td>
+          <td> {{rez.mestoVikendice}} </td>
+          <td> {{rez.status}} </td>
+          <td> {{rez.komentarVlasnika}} </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</main>

@@ -1,0 +1,64 @@
+.uredi-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.uredi-wrapper label {
+  font-weight: 500;
+  color: #1e3a8a;
+  margin-right: 5px;
+}
+
+.uredi-wrapper input[type="text"],
+.uredi-wrapper input[type="number"],
+.uredi-wrapper input[type="file"],
+.uredi-wrapper textarea {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.uredi-wrapper input:focus,
+.uredi-wrapper textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.uredi-wrapper textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.uredi-wrapper button {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.uredi-wrapper button:hover {
+  background-color: #1e40af;
+}
+
+.uredi-wrapper .message {
+  color: #dc2626;
+  margin-top: 6px;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+}

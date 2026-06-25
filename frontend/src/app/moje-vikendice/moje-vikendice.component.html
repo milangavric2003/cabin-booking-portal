@@ -1,0 +1,59 @@
+<!-- <h3>Moje vikendice:</h3>
+<table border="1">
+    <tr>
+        <th>Naziv</th>
+        <th>Mesto</th>
+    </tr>
+    @for (vik of vikendice; track $index) {
+        <tr>
+            <td>{{vik.naziv}}</td>
+            <td>{{vik.mesto}}</td>
+            <td> <button (click)="urediVikendicu(vik)">Uredi</button> </td>
+            <td> <button (click)="obrisiVikendicu(vik)">Obrisi</button> </td>
+        </tr>
+    }
+</table>
+
+<h3>Dodaj vikendicu:</h3>
+Naziv: <input type="text" name="naziv" [(ngModel)]="novaVikendica.naziv"> <br>
+Mesto: <input type="text" name="mesto" [(ngModel)]="novaVikendica.mesto"> <br>
+Usluge: <textarea name="usluge" [(ngModel)]="novaVikendica.usluge"></textarea> <br>
+Cenovnik nocenja leti: <input type="number" name="leti" [(ngModel)]="novaVikendica.cenaNociLeti"> <br>
+Cenovnik nocenja zimi: <input type="number" name="zimi" [(ngModel)]="novaVikendica.cenaNociZimi"> <br>
+Telefon: <input type="text" name="telefon" [(ngModel)]="novaVikendica.telefon"> 
+Slike: <input type="file" name="slike" accept="image/png, image/jpeg" multiple (change)="slikeSelected($event)"> <br>
+<button (click)="napraviVikendicu()">Dodaj</button> <br> -->
+
+<h3>Moje vikendice:</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Mesto</th>
+            <th colspan="2">Akcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (vik of vikendice; track $index) {
+            <tr>
+                <td>{{vik.naziv}}</td>
+                <td>{{vik.mesto}}</td>
+                <td><button (click)="urediVikendicu(vik)">Uredi</button></td>
+                <td><button (click)="obrisiVikendicu(vik)">Obrisi</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Dodaj vikendicu:</h3>
+<div class="dodaj-vikendicu-form">
+    Naziv: <input type="text" name="naziv" [(ngModel)]="novaVikendica.naziv"> <br>
+    Mesto: <input type="text" name="mesto" [(ngModel)]="novaVikendica.mesto"> <br>
+    Usluge: <textarea name="usluge" [(ngModel)]="novaVikendica.usluge"></textarea> <br>
+    Cenovnik nocenja leti: <input type="number" name="leti" [(ngModel)]="novaVikendica.cenaNociLeti"> <br>
+    Cenovnik nocenja zimi: <input type="number" name="zimi" [(ngModel)]="novaVikendica.cenaNociZimi"> <br>
+    Telefon: <input type="text" name="telefon" [(ngModel)]="novaVikendica.telefon"> <br>
+    Slike: <input type="file" name="slike" accept="image/png, image/jpeg" multiple (change)="slikeSelected($event)"> <br>
+    <button (click)="napraviVikendicu()">Dodaj</button> <br>
+    <span style="color: red;">{{messageR}}</span>
+</div>

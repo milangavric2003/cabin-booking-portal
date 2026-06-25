@@ -1,0 +1,40 @@
+<!-- 
+
+Naziv: <input type="text" name="naziv" [(ngModel)]="detaljiVikendice.naziv"> <br>
+Mesto: <input type="text" name="mesto" [(ngModel)]="detaljiVikendice.mesto"> <br>
+Usluge: <textarea name="usluge" [(ngModel)]="detaljiVikendice.usluge"></textarea> <br>
+Cenovnik nocenja leti: <input type="number" name="leti" [(ngModel)]="detaljiVikendice.cenaNociLeti"> <br>
+Cenovnik nocenja zimi: <input type="number" name="zimi" [(ngModel)]="detaljiVikendice.cenaNociZimi"> <br>
+Telefon: <input type="text" name="telefon" [(ngModel)]="detaljiVikendice.telefon"> 
+Slike: <input type="file" name="slike" accept="image/png, image/jpeg" multiple (change)="slikeSelected($event)"> <br>
+
+<button (click)="urediVikendicu()">Uredi</button> <br>
+
+<span style="color: red;">{{messageR}}</span> -->
+
+<div class="uredi-wrapper">
+  <label>Naziv:</label>
+  <input type="text" name="naziv" [(ngModel)]="detaljiVikendice.naziv">
+
+  <label>Mesto:</label>
+  <input type="text" name="mesto" [(ngModel)]="detaljiVikendice.mesto">
+
+  <label>Usluge:</label>
+  <textarea name="usluge" [(ngModel)]="detaljiVikendice.usluge"></textarea>
+
+  <label>Cenovnik nocenja leti:</label>
+  <input type="number" name="leti" [(ngModel)]="detaljiVikendice.cenaNociLeti">
+
+  <label>Cenovnik nocenja zimi:</label>
+  <input type="number" name="zimi" [(ngModel)]="detaljiVikendice.cenaNociZimi">
+
+  <label>Telefon:</label>
+  <input type="text" name="telefon" [(ngModel)]="detaljiVikendice.telefon">
+
+  <label>Slike:</label> <button (click)="obrisiSlike()">Obrisi slike</button>
+  <input type="file" name="slike" accept="image/png, image/jpeg" multiple (change)="slikeSelected($event)">
+
+  <button (click)="urediVikendicu()">Uredi</button>
+
+  <span class="message">{{messageR}}</span>
+</div>

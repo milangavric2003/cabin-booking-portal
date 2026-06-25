@@ -1,0 +1,16 @@
+# Dependency directories
+**/node_modules/
+
+# Angular production/build outputs
+**/dist/
+**/.angular/
+
+# Environment variables (Node.js)
+**/backend/.env
+**/.env
+
+# IDE and OS files
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

@@ -1,0 +1,78 @@
+<!-- <h3>Profil</h3>
+Ime: {{korisnik.ime}} <br>
+Prezime: {{korisnik.prezime}} <br>
+Adresa: {{korisnik.adresa}} <br>
+Mejl: {{korisnik.mejl}} <br>
+Kontakt telefon: {{korisnik.telefon}} <br>
+@if(korisnik.tip == "turista") {
+    Broj kartice: {{korisnik.kartica}} <br>
+}
+Profilna slika: <br> 
+<img [src]="korisnik.slika" alt="Profilna slika" width="150" height="150">
+
+<h3>Azuriraj profil</h3>
+Ime: <input type="text" name="firstname" [(ngModel)]="korisnikNovi.ime"> <br>
+Prezime: <input type="text" name="lastname" [(ngModel)]="korisnikNovi.prezime"><br>
+Adresa: <input type="text" name="adresa" [(ngModel)]="korisnikNovi.adresa"> <br>
+Mejl: <input type="text" name="mejl" [(ngModel)]="korisnikNovi.mejl"> <br>
+Kontakt telefon: <input type="text" name="telefon" [(ngModel)]="korisnikNovi.telefon"> <br>
+@if(korisnikNovi.tip == "turista") {
+    Broj kreditne kartice: <input type="text" name="kartica" [(ngModel)]="korisnikNovi.kartica" (input)="prikaziLogoKartice()">
+    @if (logoImageSrc != "") {
+        &nbsp; <img [src]="logoImageSrc" width="30" height="30" style="margin-bottom: -10px;">
+    }
+    <br>
+}
+Profilna slika: <input type="file" name="slika" accept="image/png, image/jpeg" (change)="imageSelected($event)"> <br>
+
+<button (click)="azurirajProfil()">Azuriraj</button>
+ -->
+
+<div class="profil-wrapper">
+  <h3>Profil</h3>
+
+  <div class="profil-info">
+    <p><strong>Ime:</strong> {{korisnik.ime}}</p>
+    <p><strong>Prezime:</strong> {{korisnik.prezime}}</p>
+    <p><strong>Adresa:</strong> {{korisnik.adresa}}</p>
+    <p><strong>Mejl:</strong> {{korisnik.mejl}}</p>
+    <p><strong>Kontakt telefon:</strong> {{korisnik.telefon}}</p>
+    @if(korisnik.tip == "turista") {
+      <p><strong>Broj kartice:</strong> {{korisnik.kartica}}</p>
+    }
+    <p><strong>Profilna slika:</strong></p>
+    <img [src]="korisnik.slika" alt="Profilna slika" class="profil-slika">
+  </div>
+
+  <h3>Azuriraj profil</h3>
+  <div class="profil-update">
+    <label>Ime:</label>
+    <input type="text" name="firstname" [(ngModel)]="korisnikNovi.ime">
+
+    <label>Prezime:</label>
+    <input type="text" name="lastname" [(ngModel)]="korisnikNovi.prezime">
+
+    <label>Adresa:</label>
+    <input type="text" name="adresa" [(ngModel)]="korisnikNovi.adresa">
+
+    <label>Mejl:</label>
+    <input type="text" name="mejl" [(ngModel)]="korisnikNovi.mejl">
+
+    <label>Kontakt telefon:</label>
+    <input type="text" name="telefon" [(ngModel)]="korisnikNovi.telefon">
+
+    @if(korisnikNovi.tip == "turista") {
+      <label>Broj kreditne kartice:</label>
+      <input type="text" name="kartica" [(ngModel)]="korisnikNovi.kartica" (input)="prikaziLogoKartice()">
+      @if (logoImageSrc != "") {
+        &nbsp;<img [src]="logoImageSrc" class="logo-kartice" width="30" height="30" style="margin-bottom: -10px;">
+      }
+    } <br> <br>
+
+    <label>Profilna slika:</label> <button (click)="obrisiSliku()">Obrisi sliku</button>
+    <input type="file" name="slika" accept="image/png, image/jpeg" (change)="imageSelected($event)">
+
+    <button (click)="azurirajProfil()">Azuriraj</button>
+    <span style="color: red;">{{messageR}}</span>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+<!-- 
+
+<button (click)="spisakKorak()">Spisak korisnika</button> | 
+<button (click)="zahteviKorak()">Zahtevi za registracijom</button> | 
+<button (click)="vikendiceKorak()">Vikendice</button>
+<hr>
+
+@if(korak == 1) {
+    <h3>Spisak korisnika:</h3>
+    <table border="1">
+        <tr>
+            <th>Korisnicko ime</th>
+            <th>Ime</th>
+        </tr>
+        @for (kor of odobreniKorisnici; track $index) {
+            <tr>
+                <td> {{kor.kor_ime}} </td>
+                <td> {{kor.ime}} </td>    
+                <td> <button (click)="azurirajKorisnika(kor)">Azuriraj</button> </td>
+                <td> <button (click)="promeniOdobren(kor, 'deaktiviran')">Deaktiviraj</button> </td>
+            </tr>
+        }
+    </table>
+} @else if(korak == 2) {
+    <h3>Zahtevi za registracijom:</h3>
+    <table border="1">
+        <tr>
+            <th>Korisnicko ime</th>
+            <th>Ime</th>
+        </tr>
+        @for (kor of zahtevKorisnici; track $index) {
+            <tr>
+                <td> {{kor.kor_ime}} </td>
+                <td> {{kor.ime}} </td> 
+                <td> <button (click)="promeniOdobren(kor, 'odobren')">Odobri</button> </td>   
+                <td> <button (click)="promeniOdobren(kor, 'odbijen')">Odbij</button> </td>   
+            </tr>
+        }
+    </table>
+} @else if(korak == 3) {
+    <h3>Vikendice:</h3>
+    <table border="1">
+        <tr>
+            <th>Naziv</th>
+            <th>Mesto</th>
+        </tr>
+        @for (vik of vikendice; track $index) {
+            <tr>
+                <td> {{vik.naziv}} </td>
+                <td> {{vik.mesto}} </td>
+            </tr>
+        }
+    </table>    
+} -->
+
+<header>Admin</header>
+<nav>
+  <button (click)="spisakKorak()">Spisak korisnika</button> 
+  <button (click)="zahteviKorak()">Zahtevi za registracijom</button> 
+  <button (click)="vikendiceKorak()">Vikendice</button>
+</nav>
+
+<main>
+<hr>
+
+@if(korak == 1) {
+  <h3>Spisak korisnika:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Korisnicko ime</th>
+        <th>Ime</th>
+        <th colspan="2">Akcije</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (kor of odobreniKorisnici; track $index) {
+        <tr>
+          <td>{{kor.kor_ime}}</td>
+          <td>{{kor.ime}}</td>
+          <td><button (click)="azurirajKorisnika(kor)">Azuriraj</button></td>
+          <td><button (click)="promeniOdobren(kor, 'deaktiviran')">Deaktiviraj</button></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else if(korak == 2) {
+  <h3>Zahtevi za registracijom:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Korisnicko ime</th>
+        <th>Ime</th>
+        <th colspan="2">Akcije</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (kor of zahtevKorisnici; track $index) {
+        <tr>
+          <td>{{kor.kor_ime}}</td>
+          <td>{{kor.ime}}</td>
+          <td><button (click)="promeniOdobren(kor, 'odobren')">Odobri</button></td>
+          <td><button (click)="promeniOdobren(kor, 'odbijen')">Odbij</button></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else if(korak == 3) {
+  <h3>Vikendice:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Naziv</th>
+        <th>Mesto</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (vik of vikendice; track $index) {
+        <tr>
+          <td>{{vik.naziv}}</td>
+          <td>{{vik.mesto}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
+</main>
+
+<footer>
+  <app-admin-logout></app-admin-logout> &nbsp;
+  © 2025 Milan Gavric
+</footer>

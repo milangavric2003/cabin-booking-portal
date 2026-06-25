@@ -1,0 +1,115 @@
+<!-- u frontu: ng add @angular/material -->
+
+
+<!-- <h3>Vikendica {{detaljiVikendice.naziv}} </h3>
+Mesto: {{detaljiVikendice.mesto}} <br>
+Usluge: {{detaljiVikendice.usluge}} <br>
+Cenovnik nocenja leti: {{detaljiVikendice.cenaNociLeti}} <br>
+Cenovnik nocenja zimi: {{detaljiVikendice.cenaNociZimi}} <br>
+Telefon: {{detaljiVikendice.telefon}} <br>
+
+Galerija slika: <br>
+@for (slika of detaljiVikendice.slike; track $index) {
+    <img [src]="slika" width="150" height="150"> &nbsp;
+}
+
+<h3>Zakazivanje:</h3>
+@if(korak == 1) {
+    Datum pocetka boravka: <input type="datetime-local" name="poc" [(ngModel)]="datumPocetka"> <br>
+    Datum kraja boravka: <input type="datetime-local" name="kraj" [(ngModel)]="datumKraja"> <br>
+    Broj odraslih osoba: <input type="number" name="odrasli" [(ngModel)]="rezervacija.brojOdraslih"> <br>
+    Broj dece: <input type="number" name="deca" [(ngModel)]="rezervacija.brojDece"> <br>
+
+    <button (click)="sledece()">Sledece</button> <br>
+    <span style="color: red;"> {{messageSledece}} </span>
+} @else {
+    Vikendica: {{vikendica.naziv}} <br>
+    Datum pocetka odsedanja: {{rezervacija.datumPocetka}} <br>
+    Datum kraja odsedanja: {{rezervacija.datumKraja}} <br>
+    Broj odraslih: {{rezervacija.brojOdraslih}} <br>
+    Broj dece: {{rezervacija.brojDece}} <br>
+    Korisnicka kartica: <input type="text" name="kartica" [(ngModel)]="korisnik.kartica" (input)="prikaziLogoKartice()"> 
+    @if (logoImageSrc != "") {
+        &nbsp; <img [src]="logoImageSrc" width="30" height="30" style="margin-bottom: -10px;">
+    } <br>
+    Cena: {{rezervacija.cena}} din <br>
+    <textarea name="opis" maxlength="500" [(ngModel)]="rezervacija.opis">Opis</textarea> <br>
+
+    <button (click)="nazad()">Nazad</button> &nbsp;
+    <button (click)="potvrdi()">Potvrdi placanje</button> <br>
+    <span style="color: red;"> {{messagePotvrda}} </span>
+} -->
+
+<header>
+  <h1>Detalji vikendice</h1>
+</header>
+
+<div class="detalji-wrapper">
+  <h3>Vikendica {{detaljiVikendice.naziv}}</h3>
+
+  <div class="info">
+    <p><strong>Mesto:</strong> {{detaljiVikendice.mesto}}</p>
+    <p><strong>Usluge:</strong> {{detaljiVikendice.usluge}}</p>
+    <p><strong>Cenovnik nocenja leti:</strong> {{detaljiVikendice.cenaNociLeti}}</p>
+    <p><strong>Cenovnik nocenja zimi:</strong> {{detaljiVikendice.cenaNociZimi}}</p>
+    <p><strong>Telefon:</strong> {{detaljiVikendice.telefon}}</p>
+  </div>
+
+  <div class="galerija">
+    <strong>Galerija slika: </strong><br>
+    @for (slika of detaljiVikendice.slike; track $index) {
+      <img [src]="slika" alt="Slika vikendice" width="150" height="150">
+    }
+    @if(detaljiVikendice.slike.length == 0){nema slika}
+  </div>
+
+  <h3>Zakazivanje:</h3>
+  @if(korak == 1) {
+    <div class="zakazivanje">
+      <label>Datum pocetka boravka:</label>
+      <input type="datetime-local" name="poc" [(ngModel)]="datumPocetka">
+      
+      <label>Datum kraja boravka:</label>
+      <input type="datetime-local" name="kraj" [(ngModel)]="datumKraja">
+      
+      <label>Broj odraslih osoba:</label>
+      <input type="number" name="odrasli" [(ngModel)]="rezervacija.brojOdraslih">
+      
+      <label>Broj dece:</label>
+      <input type="number" name="deca" [(ngModel)]="rezervacija.brojDece">
+      
+      <button (click)="sledece()">Sledece</button>
+      <span class="error">{{messageSledece}}</span>
+    </div>
+  } @else {
+    <div class="potvrda">
+      <p><strong>Vikendica:</strong> {{vikendica.naziv}}</p>
+      <p><strong>Datum pocetka odsedanja:</strong> {{rezervacija.datumPocetka | date: "dd.MM.yyyy"}}</p>
+      <p><strong>Datum kraja odsedanja:</strong> {{rezervacija.datumKraja | date: "dd.MM.yyyy"}}</p>
+      <p><strong>Broj odraslih:</strong> {{rezervacija.brojOdraslih}}</p>
+      <p><strong>Broj dece:</strong> {{rezervacija.brojDece}}</p>
+
+      <label>Korisnicka kartica:</label>
+      <input type="text" name="kartica" [(ngModel)]="korisnik.kartica" (input)="prikaziLogoKartice()">
+      @if (logoImageSrc != "") {
+        &nbsp; <img [src]="logoImageSrc" width="30" height="30" style="margin-bottom: -10px;">
+      }
+      <p><strong>Cena:</strong> {{rezervacija.cena}} din</p>
+
+      <label>Opis:</label>
+      <textarea name="opis" maxlength="500" [(ngModel)]="rezervacija.opis"></textarea>
+
+      <div class="buttons">
+        <button (click)="nazad()">Nazad</button>
+        <button (click)="potvrdi()">Potvrdi placanje</button>
+      </div>
+      <span class="error">{{messagePotvrda}}</span>
+    </div>
+  }
+</div>
+
+<footer>
+  <button (click)="naPocetak()">Na pocetak</button> &nbsp;
+  <app-logout></app-logout> &nbsp;
+  © 2025 Milan Gavric
+</footer>

@@ -1,0 +1,157 @@
+/* ====== GLOBALNI STIL ====== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  max-width: 100%;
+}
+
+/* ====== HEADER ====== */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ====== NAVIGACIJA ====== */
+nav {
+  background-color: #3b82f6;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 12px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+  font-size: 16px;
+}
+
+nav a:hover,
+nav a.active {
+  color: #dbeafe;
+  border-bottom: 2px solid white;
+}
+
+/* ====== SADRŽAJ ====== */
+main {
+  max-width: 1000px;
+  background: white;
+  margin: 40px auto 80px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* ====== FORME ====== */
+h3 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="radio"] {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== RESPONSIVE DIZAJN ====== */
+@media (max-width: 768px) {
+  header {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  main {
+    margin: 40px 10px 100px;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 15px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
